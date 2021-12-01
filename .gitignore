@@ -1,2 +1,4 @@
 tft-leaderboard
+tft-leaderboard.db
+*.db
 summoner_names.txt
