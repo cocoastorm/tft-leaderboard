@@ -69,18 +69,18 @@ var (
 
 func init() {
 	serveCmd.Flags().StringVar(&serveAddress, "address", web.DefaultOptions.ServeAddress, "address for web server to listen to")
-	serveCmd.Flags().StringVar(&serveAppDirPath, "appPath", web.DefaultOptions.ServeAppDirPath, "path to built front app")
-	serveCmd.Flags().StringVar(&serveAppIndexPath, "indexAppPath", web.DefaultOptions.ServeAppIndexPath, "index file to serve from built front app")
-	serveCmd.Flags().DurationVar(&serveWriteTimeout, "writeTimeout", web.DefaultOptions.ServeWriteTimeout, "server write timeout")
-	serveCmd.Flags().DurationVar(&serveReadTimeout, "readTimeout", web.DefaultOptions.ServeReadTimeout, "server read timeout")
+	serveCmd.Flags().StringVar(&serveAppDirPath, "app-path", web.DefaultOptions.ServeAppDirPath, "path to built front app")
+	serveCmd.Flags().StringVar(&serveAppIndexPath, "app-indexpath", web.DefaultOptions.ServeAppIndexPath, "index file to serve from built front app")
+	serveCmd.Flags().DurationVar(&serveWriteTimeout, "write-timeout", web.DefaultOptions.ServeWriteTimeout, "server write timeout")
+	serveCmd.Flags().DurationVar(&serveReadTimeout, "read-timeout", web.DefaultOptions.ServeReadTimeout, "server read timeout")
 	serveCmd.Flags().DurationVar(&pollInterval, "poll", web.DefaultOptions.PollInterval, "how many minutes to poll/update for ranked data")
 	serveCmd.Flags().StringVar(&goalRank, "goal", web.DefaultOptions.GoalRank, "the rank goal (eg. MASTERS)")
 
 	viper.BindPFlag("address", serveCmd.Flags().Lookup("address"))
-	viper.BindPFlag("appPath", serveCmd.Flags().Lookup("appPath"))
-	viper.BindPFlag("indexAppPath", serveCmd.Flags().Lookup("indexAppPath"))
-	viper.BindPFlag("writeTimeout", serveCmd.Flags().Lookup("writeTimeout"))
-	viper.BindPFlag("readTimeout", serveCmd.Flags().Lookup("readTimeout"))
+	viper.BindPFlag("app-path", serveCmd.Flags().Lookup("app-path"))
+	viper.BindPFlag("app-indexpath", serveCmd.Flags().Lookup("app-indexpath"))
+	viper.BindPFlag("write-timeout", serveCmd.Flags().Lookup("write-timeout"))
+	viper.BindPFlag("read-timeout", serveCmd.Flags().Lookup("read-timeout"))
 	viper.BindPFlag("poll", serveCmd.Flags().Lookup("poll"))
 	viper.BindPFlag("goal", serveCmd.Flags().Lookup("goal"))
 

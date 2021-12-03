@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"strings"
 	"os"
 
 	homedir "github.com/mitchellh/go-homedir"
@@ -24,7 +25,7 @@ func bindGlobalConfigFlags(cmd *cobra.Command) {
 	cmd.PersistentFlags().Bool("viper", true, "Use Viper for configuration")
 	viper.BindPFlag("db", cmd.PersistentFlags().Lookup("db"))
 	viper.BindPFlag("api-key", cmd.PersistentFlags().Lookup("api-key"))
-	viper.BindPFlag("useViper", cmd.PersistentFlags().Lookup("viper"))
+	viper.BindPFlag("use-viper", cmd.PersistentFlags().Lookup("viper"))
 }
 
 func initConfig() {
@@ -44,6 +45,11 @@ func initConfig() {
 
 		// env settings
 		viper.SetEnvPrefix("tft")
+
+		// allow '-' and '_'
+		replacer := strings.NewReplacer("-", "_")
+		viper.SetEnvKeyReplacer(replacer)
+
 		viper.AutomaticEnv()
 
 		if err := viper.ReadInConfig(); err != nil {
