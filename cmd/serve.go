@@ -64,6 +64,7 @@ var (
 	serveWriteTimeout time.Duration
 	serveReadTimeout time.Duration
 	pollInterval time.Duration
+	goalRank string
 )
 
 func init() {
@@ -73,6 +74,7 @@ func init() {
 	serveCmd.Flags().DurationVar(&serveWriteTimeout, "writeTimeout", web.DefaultOptions.ServeWriteTimeout, "server write timeout")
 	serveCmd.Flags().DurationVar(&serveReadTimeout, "readTimeout", web.DefaultOptions.ServeReadTimeout, "server read timeout")
 	serveCmd.Flags().DurationVar(&pollInterval, "poll", web.DefaultOptions.PollInterval, "how many minutes to poll/update for ranked data")
+	serveCmd.Flags().StringVar(&goalRank, "goal", web.DefaultOptions.GoalRank, "the rank goal (eg. MASTERS)")
 
 	viper.BindPFlag("address", serveCmd.Flags().Lookup("address"))
 	viper.BindPFlag("appPath", serveCmd.Flags().Lookup("appPath"))
@@ -80,6 +82,7 @@ func init() {
 	viper.BindPFlag("writeTimeout", serveCmd.Flags().Lookup("writeTimeout"))
 	viper.BindPFlag("readTimeout", serveCmd.Flags().Lookup("readTimeout"))
 	viper.BindPFlag("poll", serveCmd.Flags().Lookup("poll"))
+	viper.BindPFlag("goal", serveCmd.Flags().Lookup("goal"))
 
 	rootCmd.AddCommand(serveCmd)
 }
@@ -92,5 +95,6 @@ func webOptions() *web.Options {
 		ServeWriteTimeout: serveWriteTimeout,
 		ServeReadTimeout: serveReadTimeout,
 		PollInterval: pollInterval,
+		GoalRank: goalRank,
 	}
 }

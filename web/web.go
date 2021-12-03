@@ -15,6 +15,7 @@ type Options struct {
 	ServeWriteTimeout time.Duration
 	ServeReadTimeout time.Duration
 	PollInterval time.Duration
+	GoalRank string
 }
 
 var DefaultOptions = Options{
@@ -24,6 +25,7 @@ var DefaultOptions = Options{
 	ServeWriteTimeout: time.Second * 30,
 	ServeReadTimeout: time.Second * 30,
 	PollInterval: time.Second * 30,
+	GoalRank: "MASTERS",
 }
 
 type WebApp struct {

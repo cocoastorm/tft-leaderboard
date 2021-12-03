@@ -12,8 +12,14 @@ import (
 	"ktn-x.com/tft-leaderboard/data"
 )
 
+type Info struct {
+	GoalRank string `json:"goal_rank"`
+	Poll     string `json:"poll"`
+}
+
 type Board struct {
-	Store *data.Store;
+	Store *data.Store
+	IData *Info
 }
 
 func NewBoard(store *data.Store) *Board {
@@ -27,6 +33,9 @@ func (l *Board) buildRouter(opts *Options) *mux.Router {
 
 	// api routes
 	api := router.PathPrefix("/api").Subrouter()
+
+	// info
+	api.HandleFunc("/info", l.Info).Methods("GET")
 	
 	// leaderboard index
 	api.HandleFunc("/leaderboard", l.Index).Methods("GET")
@@ -38,6 +47,20 @@ func (l *Board) buildRouter(opts *Options) *mux.Router {
 	})
 
 	return router
+}
+
+func (l *Board) Info(w http.ResponseWriter, r *http.Request) {
+	if l.IData == nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		w.Write([]byte("no info found"))
+		log.Printf("no info found")
+		return
+	}
+
+	err := json.NewEncoder(w).Encode(l.IData)
+	if err != nil {
+		log.Printf("failed to encode idata: %s", err)
+	}
 }
 
 func (l *Board) Index(w http.ResponseWriter, r *http.Request) {
@@ -94,6 +117,14 @@ func (l *Board) Index(w http.ResponseWriter, r *http.Request) {
 func (l *Board) BuildServer(opts *Options) (*http.Server, error) {
 	if opts == nil {
 		return nil, fmt.Errorf("web server config options are required")
+	}
+
+	// store useful information:
+	// desired goal (what rank?)
+	// value of poll duration (used for stats)
+	l.IData = &Info{
+		GoalRank: opts.GoalRank,
+		Poll: fmt.Sprintf("%s", opts.PollInterval),
 	}
 
 	router := l.buildRouter(opts)
