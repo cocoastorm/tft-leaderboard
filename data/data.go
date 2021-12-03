@@ -3,6 +3,7 @@ package data
 import (
 	"encoding/json"
 	"fmt"
+	"time"
 
 	bolt "go.etcd.io/bbolt"
 	"ktn-x.com/tft-leaderboard/tft"
@@ -17,6 +18,8 @@ type Contestant struct {
 	SequenceId uint64 `json:"sequence_id"`
 	Summoner *tft.Summoner `json:"summoner"`
 }
+
+const timestampKey = "last-modified"
 
 func OpenDB(dataPath string) (*Store, error) {
 	var err error
@@ -191,6 +194,38 @@ func (s *Store) ListContestantRanks() (tft.RankResults, error) {
 	return collection, err
 }
 
+func (s *Store) GetRankTimestamp() (uint64, error) {
+	var ts uint64
+
+	err := s.storage.View(func(tx *bolt.Tx) error {
+		b := tx.Bucket([]byte("tft-leagues"))
+		val := b.Get([]byte(timestampKey))
+
+		t, err := btoi(val)
+		if err != nil {
+			return err
+		}
+
+		ts = t
+		return nil
+	})
+
+	if err != nil {
+		return 0, err
+	}
+
+	return ts, nil
+}
+
+func (s *Store) UpdateRankTimestamp(b *bolt.Bucket) error {
+	ts, err := itob(uint64(time.Now().Unix()))
+	if err != nil {
+		return err
+	}
+
+	return b.Put([]byte(timestampKey), ts)
+}
+
 func (s *Store) UpdateContestantRanks(items []*tft.TftPair) error {
 	return s.storage.Batch(func(tx *bolt.Tx) error {
 		b := tx.Bucket([]byte("tft-leagues"))
@@ -214,6 +249,9 @@ func (s *Store) UpdateContestantRanks(items []*tft.TftPair) error {
 
 			b.Put([]byte(summoner.Id), encoded)
 		}
+
+		// last-modified timestamp for dealing with caching
+		s.UpdateRankTimestamp(b)
 
 		return nil
 	})

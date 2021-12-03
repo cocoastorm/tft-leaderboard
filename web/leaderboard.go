@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"sort"
+	"time"
 
 	"github.com/gorilla/mux"
 	"ktn-x.com/tft-leaderboard/data"
@@ -40,6 +41,28 @@ func (l *Board) buildRouter(opts *Options) *mux.Router {
 }
 
 func (l *Board) Index(w http.ResponseWriter, r *http.Request) {
+	ts, err := l.Store.GetRankTimestamp()
+	if err != nil {
+		ts = 0
+		log.Printf("failed to fetch rank timestamp: %s", err)
+	}
+
+	// cache validation
+	// https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_validation
+	if ifModifiedSince := r.Header.Get(""); ifModifiedSince != "" {
+		rank := time.Unix(int64(ts), 0)
+		
+		since, err := time.Parse(http.TimeFormat, ifModifiedSince)
+		if err != nil {
+			log.Printf("failed to parse 'If-Modified-Since' cache header: %s", err)
+		}
+
+		if since.After(rank) {
+			w.WriteHeader(http.StatusNotModified)
+			return
+		}
+	}
+
 	results, err := l.Store.ListContestantRanks()
 	sort.Sort(results)
 
@@ -48,6 +71,14 @@ func (l *Board) Index(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("failed to fetch contestants and their ranks"))
 		log.Printf("failed to index contestants & ranks: %s", err)
 		return
+	}
+
+	// cache headers
+	w.Header().Set("Cache-Control", "max-age=120, must-validate")
+
+	if ts > 0 {
+		tsf := time.Unix(int64(ts), 0)
+		w.Header().Set("Last-Modified", tsf.Format(http.TimeFormat))
 	}
 
 	err = json.NewEncoder(w).Encode(&results)
