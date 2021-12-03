@@ -109,6 +109,10 @@ func (r *RiotClient) Summoner(name string) (*Summoner, error) {
 		return nil, err
 	}
 
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("http error: %d", resp.StatusCode)
+	}
+
 	defer resp.Body.Close()
 
 	summoner := Summoner{}
