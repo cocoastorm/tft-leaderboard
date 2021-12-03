@@ -26,7 +26,9 @@ func (l *Board) buildRouter(opts *Options) *mux.Router {
 
 	// api routes
 	api := router.PathPrefix("/api").Subrouter()
-	api.HandleFunc("/leaderboard", l.Index)
+	
+	// leaderboard index
+	api.HandleFunc("/leaderboard", l.Index).Methods("GET")
 
 	// spa front handler (eg. React App)
 	router.PathPrefix("/").Handler(frontHandler{
