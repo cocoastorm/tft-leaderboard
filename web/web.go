@@ -24,7 +24,7 @@ var DefaultOptions = Options{
 	ServeAppIndexPath: "index.html",
 	ServeWriteTimeout: time.Second * 30,
 	ServeReadTimeout: time.Second * 30,
-	PollInterval: time.Second * 30,
+	PollInterval: time.Minute * 2,
 	GoalRank: "MASTERS",
 }
 
