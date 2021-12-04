@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import useResults from '../useResults';
-import Participant from '../components/participant';
+import useResults from '../src/useResults';
+import Participant from '../src/components/participant';
 
 function Spinner() {
   return (
@@ -34,7 +34,7 @@ function Main() {
   );
 
   return (
-    <main className="flex flex-col items-center justify-center flex-1 px-10 py-7">
+    <main className="flex flex-col items-center justify-center flex-1 w-2/3 md:w-full px-10 py-7">
       { participants }
     </main>
   )
@@ -42,15 +42,15 @@ function Main() {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center min-h-screen py-2">
+    <div className="bg-sky-900 text-white flex flex-col items-center min-h-screen px-2 py-2">
       <Head>
         <title>tft leaderboard</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header className="pt-2 pb-5">
-        <h1 className="font-semibold text-lg">tft leaderboard</h1>
-        <p className="mt-2 font-light">Race to Diamond</p>
+        <h1 className="text-4xl font-semibold font-sans">tft leaderboard</h1>
+        <p className="text-2xl text-center mt-2 font-light font-sans">race to diamond</p>
       </header>
 
       <Main />

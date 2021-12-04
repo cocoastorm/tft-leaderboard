@@ -3298,7 +3298,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     swr: ^1.1.0
-    tailwindcss: ^2.2.4
+    tailwindcss: ^2.2
   languageName: unknown
   linkType: soft
 
@@ -3672,7 +3672,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^2.2.4":
+"tailwindcss@npm:^2.2":
   version: 2.2.19
   resolution: "tailwindcss@npm:2.2.19"
   dependencies:
