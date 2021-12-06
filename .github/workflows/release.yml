@@ -49,7 +49,7 @@ jobs:
           name: web-artifacts
 
       - name: Build
-        run: go build -v -o tft-leaderboard ./..
+        run: go build -v -o tft-leaderboard
 
       - name: Archive api binary
         uses: actions/upload-artifact@v2
