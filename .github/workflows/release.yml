@@ -88,11 +88,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: web-artifacts
+          path: 'site/out'
 
       - name: Download api artifacts
         uses: actions/download-artifact@v2
         with:
           name: api-binary
+          path: 'tft-leaderboard'
 
       - name: Build and push
         uses: docker/build-push-action@v2
