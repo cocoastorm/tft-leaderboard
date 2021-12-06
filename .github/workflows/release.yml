@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: web-artifacts
-          path: 'out'
+          path: 'site/out'
 
   build-api:
     runs-on: ubuntu-latest
