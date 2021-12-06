@@ -59,6 +59,9 @@ jobs:
 
   docker:
     runs-on: ubuntu-latest
+    needs:
+      - build-app
+      - build-api
     steps:
       - uses: actions/checkout@v2
       
@@ -80,6 +83,16 @@ jobs:
         uses: docker/metadata-action@v1
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Download web artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: web-artifacts
+
+      - name: Download api artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: api-binary
 
       - name: Build and push
         uses: docker/build-push-action@v2
