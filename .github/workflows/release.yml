@@ -82,7 +82,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v1
         with:
-          images: ghcr.io/tft-leaderboard
+          images: ghcr.io/cocoastorm/tft-leaderboard
 
       - name: Download web artifacts
         uses: actions/download-artifact@v2
