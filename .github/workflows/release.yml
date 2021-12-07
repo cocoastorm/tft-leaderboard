@@ -2,7 +2,15 @@ name: "Build and Publish"
 
 on:
   push:
-    branches: [ $default-branch, 'gh-actions' ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  page_build:
+  release:
+    types:
+      - created
 
 jobs:
   build-app:
