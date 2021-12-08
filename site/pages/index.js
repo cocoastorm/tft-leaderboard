@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import useResults from '../src/useResults';
-import Participant from '../src/components/participant';
+import Participant from '../components/participant';
 
 function Spinner() {
   return (
