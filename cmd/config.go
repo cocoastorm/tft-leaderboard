@@ -12,16 +12,12 @@ import (
 	"ktn-x.com/tft-leaderboard/tft"
 )
 
-var (
-	cfgFile      string
-	storagePath  string
-	riotApiKey   string
-)
+var cfgFile string
 
 func bindGlobalConfigFlags(cmd *cobra.Command) {
 	cmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.tft.yml)")
-	cmd.PersistentFlags().StringVar(&storagePath, "db", "tft-leaderboard.db", "Database Path")
-	cmd.PersistentFlags().StringVar(&riotApiKey, "api-key", "", "Riot API Key")
+	cmd.PersistentFlags().String("db", "tft-leaderboard.db", "Database Path")
+	cmd.PersistentFlags().String("api-key", "", "Riot API Key")
 	cmd.PersistentFlags().Bool("viper", true, "Use Viper for configuration")
 	viper.BindPFlag("db", cmd.PersistentFlags().Lookup("db"))
 	viper.BindPFlag("api-key", cmd.PersistentFlags().Lookup("api-key"))
@@ -50,12 +46,11 @@ func initConfig() {
 		replacer := strings.NewReplacer("-", "_")
 		viper.SetEnvKeyReplacer(replacer)
 
-		viper.AutomaticEnv()
-
 		if err := viper.ReadInConfig(); err != nil {
 			if _, ok := err.(viper.ConfigFileNotFoundError); ok {
 				// config file not found, ignoring error
-				// fallback to env (hopefully)
+				// fallback to env
+				viper.AutomaticEnv()
 				return
 			} else {
 				fmt.Println(err)
@@ -66,9 +61,11 @@ func initConfig() {
 }
 
 func openDB() (*data.Store, error) {
+	storagePath := viper.GetString("db")
 	return data.OpenDB(storagePath)
 }
 
 func openRiotApi() *tft.RiotClient {
-	return tft.NewRiot(riotApiKey)
+	apiKey := viper.GetString("api-key")
+	return tft.NewRiot(apiKey)
 }

@@ -9,13 +9,13 @@ import (
 )
 
 type Options struct {
-	ServeAddress string
-	ServeAppDirPath string
-	ServeAppIndexPath string
-	ServeWriteTimeout time.Duration
-	ServeReadTimeout time.Duration
-	PollInterval time.Duration
-	GoalRank string
+	ServeAddress string `mapstructure:"address"`
+	ServeAppDirPath string `mapstructure:"app-path"`
+	ServeAppIndexPath string `mapstructure:"app-indexpath"`
+	ServeWriteTimeout time.Duration `mapstructure:"write-timeout"`
+	ServeReadTimeout time.Duration `mapstructure:"read-timeout"`
+	PollInterval time.Duration `mapstructure:"poll"`
+	GoalRank string `mapstructure:"goal-rank"`
 }
 
 var DefaultOptions = Options{

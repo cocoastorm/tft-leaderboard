@@ -7,7 +7,6 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"time"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -57,24 +56,14 @@ var serveCmd = &cobra.Command{
 	},
 }
 
-var (
-	serveAddress string
-	serveAppDirPath string
-	serveAppIndexPath string
-	serveWriteTimeout time.Duration
-	serveReadTimeout time.Duration
-	pollInterval time.Duration
-	goalRank string
-)
-
 func init() {
-	serveCmd.Flags().StringVar(&serveAddress, "address", web.DefaultOptions.ServeAddress, "address for web server to listen to")
-	serveCmd.Flags().StringVar(&serveAppDirPath, "app-path", web.DefaultOptions.ServeAppDirPath, "path to built front app")
-	serveCmd.Flags().StringVar(&serveAppIndexPath, "app-indexpath", web.DefaultOptions.ServeAppIndexPath, "index file to serve from built front app")
-	serveCmd.Flags().DurationVar(&serveWriteTimeout, "write-timeout", web.DefaultOptions.ServeWriteTimeout, "server write timeout")
-	serveCmd.Flags().DurationVar(&serveReadTimeout, "read-timeout", web.DefaultOptions.ServeReadTimeout, "server read timeout")
-	serveCmd.Flags().DurationVar(&pollInterval, "poll", web.DefaultOptions.PollInterval, "how many minutes to poll/update for ranked data")
-	serveCmd.Flags().StringVar(&goalRank, "goal", web.DefaultOptions.GoalRank, "the rank goal (eg. MASTERS)")
+	serveCmd.Flags().String("address", web.DefaultOptions.ServeAddress, "address for web server to listen to")
+	serveCmd.Flags().String("app-path", web.DefaultOptions.ServeAppDirPath, "path to built front app")
+	serveCmd.Flags().String("app-indexpath", web.DefaultOptions.ServeAppIndexPath, "index file to serve from built front app")
+	serveCmd.Flags().Duration("write-timeout", web.DefaultOptions.ServeWriteTimeout, "server write timeout")
+	serveCmd.Flags().Duration("read-timeout", web.DefaultOptions.ServeReadTimeout, "server read timeout")
+	serveCmd.Flags().Duration("poll", web.DefaultOptions.PollInterval, "how many minutes to poll/update for ranked data")
+	serveCmd.Flags().String("goal", web.DefaultOptions.GoalRank, "the rank goal (eg. MASTERS)")
 
 	viper.BindPFlag("address", serveCmd.Flags().Lookup("address"))
 	viper.BindPFlag("app-path", serveCmd.Flags().Lookup("app-path"))
@@ -88,13 +77,11 @@ func init() {
 }
 
 func webOptions() *web.Options {
-	return &web.Options{
-		ServeAddress: serveAddress,
-		ServeAppDirPath: serveAppDirPath,
-		ServeAppIndexPath: serveAppIndexPath,
-		ServeWriteTimeout: serveWriteTimeout,
-		ServeReadTimeout: serveReadTimeout,
-		PollInterval: pollInterval,
-		GoalRank: goalRank,
+	opts := web.Options{}
+
+	if err := viper.Unmarshal(&opts); err != nil {
+		log.Printf("failed to decode web config: %s\n", err)
 	}
+
+	return &opts
 }
