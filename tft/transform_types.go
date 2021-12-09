@@ -16,31 +16,29 @@ const (
 	Challengers
 )
 
-type RankOrder int
-
-func lookupRank(name string) RankOrder {
+func lookupTier(tier string) int {
 	m := map[string]int{
 		"":            0,
 		"IRON":        Iron,
 		"BRONZE":      Bronze,
 		"SILVER":      Silver,
-		"GOLD":        Gold,    
+		"GOLD":        Gold,
 		"PLATINUM":    Platinum,
 		"DIAMOND":     Diamond,
 		"MASTERS":     Masters,
 		"CHALLENGERS": Challengers,
 	}
 
-	if v, ok := m[name]; ok {
-		return RankOrder(v)
+	if v, ok := m[tier]; ok {
+		return v
 	}
 
 	return 0
 }
 
-func lookupTier(tier string) int {
+func lookupRank(rank string) int {
 	var (
-		m = make(map[string]int, 4)
+		m     = make(map[string]int, 5)
 		tiers = []string{"I", "II", "III", "IV"}
 	)
 
@@ -50,7 +48,7 @@ func lookupTier(tier string) int {
 		m[v] = i + 1
 	}
 
-	if v, ok := m[tier]; ok {
+	if v, ok := m[rank]; ok {
 		return v
 	}
 
@@ -96,33 +94,48 @@ func (r RankResults) Less(i int, j int) bool {
 
 	// sort by rank
 	var (
-		rankA RankOrder = RankOrder(-1)
-		rankB RankOrder = RankOrder(-1)
-		tierA int
-		tierB int
+		tierA int = -1
+		tierB int = -1
+		rankA int
+		rankB int
 	)
 
-	if (pairA.Rank != nil) {
-		rankA = lookupRank(pairA.Rank.Rank)
+	if pairA.Rank != nil {
 		tierA = lookupTier(pairA.Rank.Tier)
+		rankA = lookupRank(pairA.Rank.Rank)
 	}
 
-	if (pairB.Rank != nil) {
-		rankB = lookupRank(pairB.Rank.Rank)
+	if pairB.Rank != nil {
 		tierB = lookupTier(pairB.Rank.Tier)
+		rankB = lookupRank(pairB.Rank.Rank)
 	}
 
-	if rankA != rankB {
-		return rankA > rankB
+	// sort by names if unranked
+	if rankA == -1 && rankB == -1 {
+		return strings.ToLower(pairA.Summoner.Name) < strings.ToLower(pairB.Summoner.Name)
 	}
 
-	// if same rank, sort by tier
-	if rankA > 0 && rankB > 0 {
-		return tierA > tierB
+	// if A has tier, but B doesn't
+	if tierA > -1 && tierB == -1 {
+		return false
+	}
+
+	// if B has tier, but A doesn't
+	if tierB > -1 && tierA == -1 {
+		return true
+	}
+
+	// sort by tier
+	if tierA != tierB {
+		return tierA < tierB
+	}
+
+	// if not, sort by rank
+	if tierA == tierB {
+		return rankA < rankB
 	}
 
 	// if no rank
 	log.Printf("sort hit no rank item, using names")
 	return strings.ToLower(pairA.Summoner.Name) < strings.ToLower(pairB.Summoner.Name)
 }
-

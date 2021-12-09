@@ -87,7 +87,7 @@ func (l *Board) Index(w http.ResponseWriter, r *http.Request) {
 	}
 
 	results, err := l.Store.ListContestantRanks()
-	sort.Sort(results)
+	sort.Sort(sort.Reverse(results))
 
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
