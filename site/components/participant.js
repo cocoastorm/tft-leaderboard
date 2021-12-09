@@ -37,8 +37,8 @@ export default function ParticipantItem(props) {
         </div>
 
         <div className="flex flex-col items-center mx-3">
-          <Tag color="emerald" value={ (props.rank && props.rank.wins) ? props.rank.wins : 0 } title="Wins" />
-          <Tag color="fuchsia" value={ (props.rank && props.rank.losses) ? props.rank.losses : 0 } title="Losses" />
+          <Tag className="text-emerald-400" value={ (props.rank && props.rank.wins) ? props.rank.wins : 0 } title="Wins" />
+          <Tag className="text-fuchsia-400" value={ (props.rank && props.rank.losses) ? props.rank.losses : 0 } title="Losses" />
         </div>
 
         <div className="text-teal-400">
