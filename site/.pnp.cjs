@@ -36,6 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["autoprefixer", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:10.4.0"],
+            ["classnames", "npm:2.3.1"],
             ["next", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:12.0.4"],
             ["ordinal", "npm:1.0.3"],
             ["postcss", "npm:8.4.4"],
@@ -1053,6 +1054,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/classnames-npm-2.2.6-98e9901cf4-09a4fda780.zip/node_modules/classnames/",
           "packageDependencies": [
             ["classnames", "npm:2.2.6"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:2.3.1", {
+          "packageLocation": "./.yarn/cache/classnames-npm-2.3.1-f2ae0a8d3c-14db8889d5.zip/node_modules/classnames/",
+          "packageDependencies": [
+            ["classnames", "npm:2.3.1"]
           ],
           "linkType": "HARD",
         }]
@@ -3857,6 +3865,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["root-workspace-0b6124", "workspace:."],
             ["autoprefixer", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:10.4.0"],
+            ["classnames", "npm:2.3.1"],
             ["next", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:12.0.4"],
             ["ordinal", "npm:1.0.3"],
             ["postcss", "npm:8.4.4"],
