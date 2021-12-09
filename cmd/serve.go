@@ -14,7 +14,7 @@ import (
 )
 
 var serveCmd = &cobra.Command{
-	Use: "serve",
+	Use:   "serve",
 	Short: "Boots up the web server",
 	Long: `Boots up the web server and static SPA routing
 		for the leaderboard portion of tft-leaderboard
@@ -62,7 +62,8 @@ func init() {
 	serveCmd.Flags().String("app-indexpath", web.DefaultOptions.ServeAppIndexPath, "index file to serve from built front app")
 	serveCmd.Flags().Duration("write-timeout", web.DefaultOptions.ServeWriteTimeout, "server write timeout")
 	serveCmd.Flags().Duration("read-timeout", web.DefaultOptions.ServeReadTimeout, "server read timeout")
-	serveCmd.Flags().Duration("poll", web.DefaultOptions.PollInterval, "how many minutes to poll/update for ranked data")
+	serveCmd.Flags().Bool("poll", web.DefaultOptions.Poll, "rank polling")
+	serveCmd.Flags().Duration("poll-interval", web.DefaultOptions.PollInterval, "how many minutes to poll/update for ranked data")
 	serveCmd.Flags().String("goal", web.DefaultOptions.GoalRank, "the rank goal (eg. MASTERS)")
 
 	viper.BindPFlag("address", serveCmd.Flags().Lookup("address"))
@@ -71,6 +72,7 @@ func init() {
 	viper.BindPFlag("write-timeout", serveCmd.Flags().Lookup("write-timeout"))
 	viper.BindPFlag("read-timeout", serveCmd.Flags().Lookup("read-timeout"))
 	viper.BindPFlag("poll", serveCmd.Flags().Lookup("poll"))
+	viper.BindPFlag("poll-interval", serveCmd.Flags().Lookup("poll-interval"))
 	viper.BindPFlag("goal", serveCmd.Flags().Lookup("goal"))
 
 	rootCmd.AddCommand(serveCmd)

@@ -36,14 +36,14 @@ func (l *Board) buildRouter(opts *Options) *mux.Router {
 
 	// info
 	api.HandleFunc("/info", l.Info).Methods("GET")
-	
+
 	// leaderboard index
 	api.HandleFunc("/leaderboard", l.Index).Methods("GET")
 
 	// spa front handler (eg. React App)
 	router.PathPrefix("/").Handler(frontHandler{
 		staticPath: opts.ServeAppDirPath,
-		indexPath: opts.ServeAppIndexPath,
+		indexPath:  opts.ServeAppIndexPath,
 	})
 
 	return router
@@ -74,7 +74,7 @@ func (l *Board) Index(w http.ResponseWriter, r *http.Request) {
 	// https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching#cache_validation
 	if ifModifiedSince := r.Header.Get(""); ifModifiedSince != "" {
 		rank := time.Unix(int64(ts), 0)
-		
+
 		since, err := time.Parse(http.TimeFormat, ifModifiedSince)
 		if err != nil {
 			log.Printf("failed to parse 'If-Modified-Since' cache header: %s", err)
@@ -124,16 +124,16 @@ func (l *Board) BuildServer(opts *Options) (*http.Server, error) {
 	// value of poll duration (used for stats)
 	l.IData = &Info{
 		GoalRank: opts.GoalRank,
-		Poll: fmt.Sprintf("%s", opts.PollInterval),
+		Poll:     fmt.Sprintf("%s", opts.PollInterval),
 	}
 
 	router := l.buildRouter(opts)
 
 	return &http.Server{
 		Handler: router,
-		Addr: opts.ServeAddress,
+		Addr:    opts.ServeAddress,
 		// Good practice: enforce timeouts for serves you create!
-		ReadTimeout: opts.ServeReadTimeout,
+		ReadTimeout:  opts.ServeReadTimeout,
 		WriteTimeout: opts.ServeWriteTimeout,
 	}, nil
 }
