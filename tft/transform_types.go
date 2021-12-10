@@ -132,7 +132,7 @@ func (r RankResults) Less(i int, j int) bool {
 
 	// if not, sort by rank
 	if tierA == tierB {
-		return rankA < rankB
+		return rankA > rankB
 	}
 
 	// if no rank
