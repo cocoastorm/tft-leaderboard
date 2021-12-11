@@ -16,9 +16,14 @@ const (
 	Challengers
 )
 
-func lookupTier(tier string) int {
-	m := map[string]int{
-		"":            0,
+var (
+	tierLookupMap map[string]int
+	rankLookupMap map[string]int
+)
+
+func init() {
+	tierLookupMap = map[string]int{
+		"": 0,
 		"IRON":        Iron,
 		"BRONZE":      Bronze,
 		"SILVER":      Silver,
@@ -29,7 +34,15 @@ func lookupTier(tier string) int {
 		"CHALLENGERS": Challengers,
 	}
 
-	if v, ok := m[tier]; ok {
+	rankLookupMap = make(map[string]int, 5)
+	rankLookupMap[""] = 0
+	for i, v := range []string{"I", "II", "III", "IV"} {
+		rankLookupMap[v] = i + 1
+	}
+}
+
+func lookupTier(tier string) int {
+	if v, ok := tierLookupMap[tier]; ok {
 		return v
 	}
 
@@ -37,18 +50,7 @@ func lookupTier(tier string) int {
 }
 
 func lookupRank(rank string) int {
-	var (
-		m     = make(map[string]int, 5)
-		tiers = []string{"I", "II", "III", "IV"}
-	)
-
-	m[""] = 0
-
-	for i, v := range tiers {
-		m[v] = i + 1
-	}
-
-	if v, ok := m[rank]; ok {
+	if v, ok := rankLookupMap[rank]; ok {
 		return v
 	}
 
