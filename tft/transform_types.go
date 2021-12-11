@@ -133,6 +133,8 @@ func (r RankResults) Less(i int, j int) bool {
 	}
 
 	// if not, sort by rank
+	// the lower the tier, the higher it is worth :kappa:
+	// eg. silver I > silver III
 	if tierA == tierB {
 		return rankA > rankB
 	}
