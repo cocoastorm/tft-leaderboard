@@ -71,6 +71,7 @@ type WTftLeague struct {
 	Rank         string `json:"rank"`
 	Wins         int64  `json:"wins"`
 	Losses       int64  `json:"losses"`
+	Total        int64  `json:"total"`
 }
 
 type WTftPair struct {

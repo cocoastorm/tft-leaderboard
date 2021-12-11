@@ -17,6 +17,7 @@ func (league *TftLeague) transform() *WTftLeague {
 		Rank: league.Rank,
 		Wins: league.Wins,
 		Losses: league.Losses,
+		Total: league.Wins + league.Losses,
 	}
 }
 
