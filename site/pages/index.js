@@ -34,7 +34,7 @@ function Main() {
   );
 
   return (
-    <main className="flex flex-col items-center justify-center flex-1 w-2/3 md:w-full px-10 py-7">
+    <main className="flex flex-col items-center justify-center flex-1 w-2/3 sm:w-full px-10 py-7">
       { participants }
     </main>
   )

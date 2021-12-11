@@ -10,22 +10,22 @@ export default function ParticipantItem(props) {
   }
 
   return (
-    <div className="bg-gradient-to-r from-sky-700 hover:from-sky-600 to-sky-800 hover:to-sky-700 rounded-md max-w-2xl py-4 mb-5 md:w-1/2">
-      <div className="flex flex-1 items-center justify-around w-2/3 md:w-full">
+    <div className="bg-gradient-to-r from-sky-700 hover:from-sky-600 to-sky-800 hover:to-sky-700 rounded-md w-full max-w-2xl px-2 sm:px-4 py-2 md:py-4 mb-3 md:mb-5">
+      <div className="flex flex-col sm:flex-row items-center justify-around w-full">
         { props.placement !== null &&
-          <div className="ordinal mx-5">
+          <div className="hidden md:block ordinal mx-5">
             {props.placement}{indicator(props.placement)}
           </div>
         }
 
-        <div className="max-w-full rounded-xl mx-2 p-8 sm:p-0">
+        <div className="hidden sm:block max-w-full rounded-xl mx-2 p-8 sm:p-0">
           <img
-            className="w-8 h-8 md:w-16 md:h-auto rounded-full mx-auto"
+            className="w-16 md:h-auto rounded-full mx-auto"
             src={'http://ddragon.leagueoflegends.com/cdn/11.23.1/img/profileicon/' + profileIconName}
           />
         </div>
 
-        <div className="flex flex-col content-center w-3/5 md:w-1/5 mx-3">
+        <div className="flex flex-col content-center px-2 sm:px-4">
           <div className="font-medium text-center text-sm">{props.summoner.name}</div>
 
           { props.rank !== null &&
