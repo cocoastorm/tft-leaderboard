@@ -6,7 +6,7 @@ export default function Tag(props) {
   return (
     <div>
       <span className={numClass}>{ props.value }</span>
-      <span className="font-semibold text-cyan-400">{ props.title }</span>
+      <span className="font-semibold text-cyan-200">{ props.title }</span>
     </div>
   )
 }
