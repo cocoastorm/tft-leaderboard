@@ -37,6 +37,7 @@ jobs:
 
       - name: Zip web app artifacts
         run: zip -r release-${{ github.ref_name }}-${{ github.sha }}.zip out
+        if: startsWith(github.ref, 'refs/tags/')
 
       - name: Release zipped web app artifacts
         uses: softprops/action-gh-release@v1
@@ -44,7 +45,7 @@ jobs:
         with:
           files: release-${{ github.ref_name }}-${{ github.sha }}.zip
 
-      - name: Archive web app artifacts
+      - name: Persist web app artifacts
         uses: actions/upload-artifact@v2
         with:
           name: web-artifacts
@@ -75,7 +76,7 @@ jobs:
         with:
           files: 'tft-leaderboard'
 
-      - name: Archive api binary
+      - name: Persist api binary
         uses: actions/upload-artifact@v2
         with:
           name: api-binary
