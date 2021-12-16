@@ -23,7 +23,7 @@ var (
 
 func init() {
 	tierLookupMap = map[string]int{
-		"": 0,
+		"":            0,
 		"IRON":        Iron,
 		"BRONZE":      Bronze,
 		"SILVER":      Silver,
@@ -101,16 +101,20 @@ func (r RankResults) Less(i int, j int) bool {
 		tierB int = -1
 		rankA int
 		rankB int
+		lpA   int64
+		lpB   int64
 	)
 
 	if pairA.Rank != nil {
 		tierA = lookupTier(pairA.Rank.Tier)
 		rankA = lookupRank(pairA.Rank.Rank)
+		lpA = pairA.Rank.LeaguePoints
 	}
 
 	if pairB.Rank != nil {
 		tierB = lookupTier(pairB.Rank.Tier)
 		rankB = lookupRank(pairB.Rank.Rank)
+		lpB = pairB.Rank.LeaguePoints
 	}
 
 	// sort by names if unranked
@@ -137,7 +141,13 @@ func (r RankResults) Less(i int, j int) bool {
 	// the lower the tier, the higher it is worth :kappa:
 	// eg. silver I > silver III
 	if tierA == tierB {
-		return rankA > rankB
+		if rankA != rankB {
+			return rankA > rankB
+		}
+
+		// if same rank and tier
+		// sort by LP
+		return lpA > lpB
 	}
 
 	// if no rank
