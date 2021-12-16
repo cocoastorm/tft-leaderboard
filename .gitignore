@@ -1,4 +1,6 @@
-.sublime-project
-tft-leaderboard
 *.db
+*.sublime-project
+
+tft-leaderboard
+
 summoner_names.txt
