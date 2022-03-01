@@ -1,0 +1,1125 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"updateAssigned",
+				"updateAssignedGroups"
+			],
+			[
+				"NewPar",
+				"NewParticipantsPool"
+			],
+			[
+				"tier",
+				"tierLookupMap"
+			],
+			[
+				"tab",
+				"\"tab_size\""
+			],
+			[
+				"dockerfile",
+				"dockerfileList"
+			],
+			[
+				"Docker",
+				"DockerBuildMultiarchTaskLoader"
+			],
+			[
+				"DockerBuild",
+				"DockerBuildMultiarchTaskLoader"
+			],
+			[
+				"docker",
+				"docker_build_multiarch_command"
+			],
+			[
+				"assign",
+				"canAssignDealer"
+			],
+			[
+				"grab",
+				"grabFriendlyErrorFromResponse"
+			],
+			[
+				"updateA",
+				"updateAssignGroups"
+			],
+			[
+				"Assigned",
+				"AssignedPicker"
+			],
+			[
+				"read",
+				"readAsDataURL"
+			],
+			[
+				"Window",
+				"WindowWithClipboard"
+			],
+			[
+				"clipboard",
+				"ClipboardEvent"
+			],
+			[
+				"script",
+				"<script> typescript.vue ✌"
+			],
+			[
+				"assigned",
+				"assignedGroups"
+			],
+			[
+				"Write",
+				"Header().Write"
+			],
+			[
+				"Update",
+				"UpdateRankTimestamp"
+			],
+			[
+				"profile",
+				"profileIconName"
+			],
+			[
+				"Kilo",
+				"kilowattTooltip"
+			],
+			[
+				"Print",
+				"data.PrintResult"
+			],
+			[
+				"summoner",
+				"summoner.ProfileIconId"
+			],
+			[
+				"C",
+				"Contestant"
+			],
+			[
+				"sprint",
+				"fmt.Sprintf"
+			],
+			[
+				"base",
+				"base_filename"
+			],
+			[
+				"out",
+				"out_directory"
+			],
+			[
+				"disocunt",
+				"discountTotal"
+			],
+			[
+				"dicount",
+				"discountTotal"
+			],
+			[
+				"Discount",
+				"DiscountPoint"
+			],
+			[
+				"Notify",
+				"NotifyContext"
+			],
+			[
+				"open",
+				"openRiotApi"
+			],
+			[
+				"web",
+				"webOptions"
+			],
+			[
+				"Sync",
+				"Sync.Do"
+			],
+			[
+				"serveApp",
+				"serveAppIndexPath"
+			],
+			[
+				"Serve",
+				"ServeAppDirPath"
+			],
+			[
+				"opts",
+				"opts.ServeReadTimeout"
+			],
+			[
+				"defa",
+				"DefaultOptions.ServeReadTimeout"
+			],
+			[
+				"Def",
+				"DefaultOptions.ServeAppIndexPath"
+			],
+			[
+				"D",
+				"DefaultOptions.ServeAppDirPath"
+			],
+			[
+				"Store",
+				"Store.UpdateContestants"
+			],
+			[
+				"pool",
+				"pool.GetParticipants"
+			],
+			[
+				"stor",
+				"storagePath"
+			],
+			[
+				"Co",
+				"CoRankResult"
+			],
+			[
+				"Create",
+				"CreateBucketIfNotExists"
+			],
+			[
+				"int",
+				"int8"
+			],
+			[
+				"pull",
+				"pull_expr_status"
+			],
+			[
+				"throw",
+				"throwException"
+			],
+			[
+				"Discounts",
+				"MaloneTuning\\Discounts\\Contracts"
+			],
+			[
+				"psr",
+				"\"psr-4\""
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tft/transform_types.go",
+			"settings":
+			{
+				"buffer_size": 2729,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					17,
+					1,
+					"insert",
+					{
+						"characters": "\nif"
+					},
+					"BQAAAJEJAAAAAAAAkgkAAAAAAAAAAAAAkgkAAAAAAACTCQAAAAAAAAAAAACTCQAAAAAAAJQJAAAAAAAAAAAAAJQJAAAAAAAAlQkAAAAAAAAAAAAAlQkAAAAAAACWCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAkQkAAAAAAACRCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					18,
+					1,
+					"insert",
+					{
+						"characters": " rankA"
+					},
+					"BgAAAJYJAAAAAAAAlwkAAAAAAAAAAAAAlwkAAAAAAACYCQAAAAAAAAAAAACYCQAAAAAAAJkJAAAAAAAAAAAAAJkJAAAAAAAAmgkAAAAAAAAAAAAAmgkAAAAAAACbCQAAAAAAAAAAAACbCQAAAAAAAJwJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAlgkAAAAAAACWCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					19,
+					1,
+					"insert",
+					{
+						"characters": " =="
+					},
+					"AwAAAJwJAAAAAAAAnQkAAAAAAAAAAAAAnQkAAAAAAACeCQAAAAAAAAAAAACeCQAAAAAAAJ8JAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAnAkAAAAAAACcCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					20,
+					1,
+					"insert",
+					{
+						"characters": " rankB"
+					},
+					"BgAAAJ8JAAAAAAAAoAkAAAAAAAAAAAAAoAkAAAAAAAChCQAAAAAAAAAAAAChCQAAAAAAAKIJAAAAAAAAAAAAAKIJAAAAAAAAowkAAAAAAAAAAAAAowkAAAAAAACkCQAAAAAAAAAAAACkCQAAAAAAAKUJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAnwkAAAAAAACfCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					21,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAKUJAAAAAAAApgkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAApQkAAAAAAAClCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					22,
+					1,
+					"insert_snippet",
+					{
+						"contents": "{$0}"
+					},
+					"AQAAAKYJAAAAAAAAqAkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAApgkAAAAAAACmCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					23,
+					1,
+					"run_macro_file",
+					{
+						"file": "res://Packages/Default/Add Line in Braces.sublime-macro"
+					},
+					"BgAAAKcJAAAAAAAAqAkAAAAAAAAAAAAAqAkAAAAAAACqCQAAAAAAAAAAAACqCQAAAAAAAKsJAAAAAAAAAAAAAKsJAAAAAAAArQkAAAAAAAAAAAAAqAkAAAAAAACoCQAAAAAAAAIAAAAJCagJAAAAAAAAqwkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAApwkAAAAAAACnCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					25,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AwAAAK8JAAAAAAAAsAkAAAAAAAAAAAAAsAkAAAAAAACyCQAAAAAAAAAAAACoCQAAAAAAAKgJAAAAAAAAAwAAAAkJCQ",
+					"AQAAAAAAAAABAAAArwkAAAAAAACvCQAAAAAAAAAAAAAAAEVA"
+				],
+				[
+					27,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AwAAAJQJAAAAAAAAlQkAAAAAAAAAAAAAlQkAAAAAAACXCQAAAAAAAAAAAACwCQAAAAAAALAJAAAAAAAAAgAAAAkJ",
+					"AQAAAAAAAAABAAAAlAkAAAAAAACUCQAAAAAAAAAAAAAAADxA"
+				],
+				[
+					29,
+					1,
+					"insert",
+					{
+						"characters": "//"
+					},
+					"AgAAAJQJAAAAAAAAlQkAAAAAAAAAAAAAlQkAAAAAAACWCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAlAkAAAAAAACUCQAAAAAAAAAAAAAAADxA"
+				],
+				[
+					30,
+					1,
+					"insert",
+					{
+						"characters": " "
+					},
+					"AQAAAJYJAAAAAAAAlwkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAlgkAAAAAAACWCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					33,
+					1,
+					"left_delete",
+					null,
+					"AQAAAKMJAAAAAAAAowkAAAAAAAABAAAAPQ",
+					"AQAAAAAAAAABAAAApAkAAAAAAACkCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					34,
+					1,
+					"insert",
+					{
+						"characters": "!"
+					},
+					"AQAAAKMJAAAAAAAApAkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAowkAAAAAAACjCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					37,
+					1,
+					"reindent",
+					null,
+					"AQAAAK4JAAAAAAAAsQkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAArgkAAAAAAACuCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					38,
+					1,
+					"insert",
+					{
+						"characters": "return"
+					},
+					"BgAAALEJAAAAAAAAsgkAAAAAAAAAAAAAsgkAAAAAAACzCQAAAAAAAAAAAACzCQAAAAAAALQJAAAAAAAAAAAAALQJAAAAAAAAtQkAAAAAAAAAAAAAtQkAAAAAAAC2CQAAAAAAAAAAAAC2CQAAAAAAALcJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAsQkAAAAAAACxCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					39,
+					1,
+					"insert",
+					{
+						"characters": " rankA"
+					},
+					"BgAAALcJAAAAAAAAuAkAAAAAAAAAAAAAuAkAAAAAAAC5CQAAAAAAAAAAAAC5CQAAAAAAALoJAAAAAAAAAAAAALoJAAAAAAAAuwkAAAAAAAAAAAAAuwkAAAAAAAC8CQAAAAAAAAAAAAC8CQAAAAAAAL0JAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAtwkAAAAAAAC3CQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					40,
+					1,
+					"insert",
+					{
+						"characters": " >"
+					},
+					"AgAAAL0JAAAAAAAAvgkAAAAAAAAAAAAAvgkAAAAAAAC/CQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAvQkAAAAAAAC9CQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					41,
+					1,
+					"insert",
+					{
+						"characters": " rankB"
+					},
+					"BgAAAL8JAAAAAAAAwAkAAAAAAAAAAAAAwAkAAAAAAADBCQAAAAAAAAAAAADBCQAAAAAAAMIJAAAAAAAAAAAAAMIJAAAAAAAAwwkAAAAAAAAAAAAAwwkAAAAAAADECQAAAAAAAAAAAADECQAAAAAAAMUJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAvwkAAAAAAAC/CQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					44,
+					1,
+					"cut",
+					null,
+					"AQAAAJIJAAAAAAAAkgkAAAAAAAAGAAAACQkvLyAK",
+					"AQAAAAAAAAABAAAAlwkAAAAAAACXCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					58,
+					1,
+					"reindent",
+					null,
+					"AQAAAMQJAAAAAAAAxgkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAxAkAAAAAAADECQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					59,
+					1,
+					"insert",
+					{
+						"characters": "\n//"
+					},
+					"BQAAAMYJAAAAAAAAxwkAAAAAAAAAAAAAxwkAAAAAAADJCQAAAAAAAAAAAADECQAAAAAAAMQJAAAAAAAAAgAAAAkJxwkAAAAAAADICQAAAAAAAAAAAADICQAAAAAAAMkJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAxgkAAAAAAADGCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					60,
+					1,
+					"insert",
+					{
+						"characters": " if"
+					},
+					"AwAAAMkJAAAAAAAAygkAAAAAAAAAAAAAygkAAAAAAADLCQAAAAAAAAAAAADLCQAAAAAAAMwJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAyQkAAAAAAADJCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					61,
+					1,
+					"insert",
+					{
+						"characters": " th"
+					},
+					"AwAAAMwJAAAAAAAAzQkAAAAAAAAAAAAAzQkAAAAAAADOCQAAAAAAAAAAAADOCQAAAAAAAM8JAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAzAkAAAAAAADMCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					62,
+					2,
+					"left_delete",
+					null,
+					"AgAAAM4JAAAAAAAAzgkAAAAAAAABAAAAaM0JAAAAAAAAzQkAAAAAAAABAAAAdA",
+					"AQAAAAAAAAABAAAAzwkAAAAAAADPCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					63,
+					1,
+					"insert",
+					{
+						"characters": "t"
+					},
+					"AQAAAM0JAAAAAAAAzgkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAzQkAAAAAAADNCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					64,
+					1,
+					"left_delete",
+					null,
+					"AQAAAM0JAAAAAAAAzQkAAAAAAAABAAAAdA",
+					"AQAAAAAAAAABAAAAzgkAAAAAAADOCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					65,
+					1,
+					"insert",
+					{
+						"characters": "same"
+					},
+					"BAAAAM0JAAAAAAAAzgkAAAAAAAAAAAAAzgkAAAAAAADPCQAAAAAAAAAAAADPCQAAAAAAANAJAAAAAAAAAAAAANAJAAAAAAAA0QkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAzQkAAAAAAADNCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					66,
+					1,
+					"insert",
+					{
+						"characters": " rnak"
+					},
+					"BQAAANEJAAAAAAAA0gkAAAAAAAAAAAAA0gkAAAAAAADTCQAAAAAAAAAAAADTCQAAAAAAANQJAAAAAAAAAAAAANQJAAAAAAAA1QkAAAAAAAAAAAAA1QkAAAAAAADWCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA0QkAAAAAAADRCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					67,
+					3,
+					"left_delete",
+					null,
+					"AwAAANUJAAAAAAAA1QkAAAAAAAABAAAAa9QJAAAAAAAA1AkAAAAAAAABAAAAYdMJAAAAAAAA0wkAAAAAAAABAAAAbg",
+					"AQAAAAAAAAABAAAA1gkAAAAAAADWCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					68,
+					1,
+					"insert",
+					{
+						"characters": "ank"
+					},
+					"AwAAANMJAAAAAAAA1AkAAAAAAAAAAAAA1AkAAAAAAADVCQAAAAAAAAAAAADVCQAAAAAAANYJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA0wkAAAAAAADTCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					69,
+					1,
+					"insert",
+					{
+						"characters": " and"
+					},
+					"BAAAANYJAAAAAAAA1wkAAAAAAAAAAAAA1wkAAAAAAADYCQAAAAAAAAAAAADYCQAAAAAAANkJAAAAAAAAAAAAANkJAAAAAAAA2gkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA1gkAAAAAAADWCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					70,
+					1,
+					"insert",
+					{
+						"characters": " tier"
+					},
+					"BQAAANoJAAAAAAAA2wkAAAAAAAAAAAAA2wkAAAAAAADcCQAAAAAAAAAAAADcCQAAAAAAAN0JAAAAAAAAAAAAAN0JAAAAAAAA3gkAAAAAAAAAAAAA3gkAAAAAAADfCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA2gkAAAAAAADaCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					71,
+					1,
+					"insert",
+					{
+						"characters": " sort"
+					},
+					"BQAAAN8JAAAAAAAA4AkAAAAAAAAAAAAA4AkAAAAAAADhCQAAAAAAAAAAAADhCQAAAAAAAOIJAAAAAAAAAAAAAOIJAAAAAAAA4wkAAAAAAAAAAAAA4wkAAAAAAADkCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA3wkAAAAAAADfCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					72,
+					1,
+					"insert",
+					{
+						"characters": " b"
+					},
+					"AgAAAOQJAAAAAAAA5QkAAAAAAAAAAAAA5QkAAAAAAADmCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA5AkAAAAAAADkCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					73,
+					7,
+					"left_delete",
+					null,
+					"BwAAAOUJAAAAAAAA5QkAAAAAAAABAAAAYuQJAAAAAAAA5AkAAAAAAAABAAAAIOMJAAAAAAAA4wkAAAAAAAABAAAAdOIJAAAAAAAA4gkAAAAAAAABAAAAcuEJAAAAAAAA4QkAAAAAAAABAAAAb+AJAAAAAAAA4AkAAAAAAAABAAAAc98JAAAAAAAA3wkAAAAAAAABAAAAIA",
+					"AQAAAAAAAAABAAAA5gkAAAAAAADmCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					74,
+					1,
+					"insert",
+					{
+						"characters": "\n//"
+					},
+					"BAAAAN8JAAAAAAAA4AkAAAAAAAAAAAAA4AkAAAAAAADiCQAAAAAAAAAAAADiCQAAAAAAAOMJAAAAAAAAAAAAAOMJAAAAAAAA5AkAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA3wkAAAAAAADfCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					75,
+					1,
+					"insert",
+					{
+						"characters": " sort"
+					},
+					"BQAAAOQJAAAAAAAA5QkAAAAAAAAAAAAA5QkAAAAAAADmCQAAAAAAAAAAAADmCQAAAAAAAOcJAAAAAAAAAAAAAOcJAAAAAAAA6AkAAAAAAAAAAAAA6AkAAAAAAADpCQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA5AkAAAAAAADkCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					76,
+					1,
+					"insert",
+					{
+						"characters": " by"
+					},
+					"AwAAAOkJAAAAAAAA6gkAAAAAAAAAAAAA6gkAAAAAAADrCQAAAAAAAAAAAADrCQAAAAAAAOwJAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA6QkAAAAAAADpCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					77,
+					1,
+					"insert",
+					{
+						"characters": " LP"
+					},
+					"AwAAAOwJAAAAAAAA7QkAAAAAAAAAAAAA7QkAAAAAAADuCQAAAAAAAAAAAADuCQAAAAAAAO8JAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA7AkAAAAAAADsCQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					80,
+					1,
+					"left_delete",
+					null,
+					"AQAAAPkJAAAAAAAA+QkAAAAAAAANAAAAcmFua0EgPiByYW5rQg",
+					"AQAAAAAAAAABAAAABgoAAAAAAAD5CQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					92,
+					1,
+					"insert",
+					{
+						"characters": "\nlpA"
+					},
+					"BQAAALoGAAAAAAAAuwYAAAAAAAAAAAAAuwYAAAAAAAC9BgAAAAAAAAAAAAC9BgAAAAAAAL4GAAAAAAAAAAAAAL4GAAAAAAAAvwYAAAAAAAAAAAAAvwYAAAAAAADABgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAugYAAAAAAAC6BgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					93,
+					1,
+					"insert",
+					{
+						"characters": " int"
+					},
+					"BAAAAMAGAAAAAAAAwQYAAAAAAAAAAAAAwQYAAAAAAADCBgAAAAAAAAAAAADCBgAAAAAAAMMGAAAAAAAAAAAAAMMGAAAAAAAAxAYAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAwAYAAAAAAADABgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					94,
+					1,
+					"insert",
+					{
+						"characters": "\nlpB"
+					},
+					"BQAAAMQGAAAAAAAAxQYAAAAAAAAAAAAAxQYAAAAAAADHBgAAAAAAAAAAAADHBgAAAAAAAMgGAAAAAAAAAAAAAMgGAAAAAAAAyQYAAAAAAAAAAAAAyQYAAAAAAADKBgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAxAYAAAAAAADEBgAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					95,
+					1,
+					"insert",
+					{
+						"characters": " int"
+					},
+					"BAAAAMoGAAAAAAAAywYAAAAAAAAAAAAAywYAAAAAAADMBgAAAAAAAAAAAADMBgAAAAAAAM0GAAAAAAAAAAAAAM0GAAAAAAAAzgYAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAygYAAAAAAADKBgAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"lsp-vue",
+				"Preferences: LSP-vue Settings"
+			],
+			[
+				"trouble",
+				"LSP: Troubleshoot Server"
+			],
+			[
+				"disable globa",
+				"LSP: Disable Language Server Globally"
+			],
+			[
+				"globally",
+				"LSP: Disable Language Server Globally"
+			],
+			[
+				"settings lsp",
+				"Preferences: LSP-eslint Settings"
+			],
+			[
+				"enable",
+				"LSP: Enable Language Server in Project"
+			],
+			[
+				"lsp: disalbe",
+				"LSP: Disable Language Server in Project"
+			],
+			[
+				"lsp-eslint",
+				"Preferences: LSP-eslint Settings"
+			],
+			[
+				"lsp:",
+				"LSP: Troubleshoot Server"
+			],
+			[
+				"toggle log pan",
+				"LSP: Toggle Diagnostics Panel"
+			],
+			[
+				"lsp settings",
+				"Preferences: LSP Settings"
+			],
+			[
+				"disable",
+				"LSP: Disable Language Server in Project"
+			],
+			[
+				"disla",
+				"LSP: Disable Language Server in Project"
+			],
+			[
+				"lsp eslint",
+				"Preferences: LSP-eslint Settings"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"restart",
+				"LSP: Restart Server"
+			],
+			[
+				"rest",
+				"LSP: Restart Server"
+			],
+			[
+				"lsp",
+				"Preferences: LSP-gopls Settings"
+			],
+			[
+				"gopls",
+				"Preferences: LSP-gopls Settings"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"create pyr",
+				"LSP-pyright: Create Pyright Configuration File"
+			],
+			[
+				"en",
+				"LSP: Enable Language Server in Project"
+			],
+			[
+				"lsp-",
+				"Preferences: LSP-intelephense Settings"
+			],
+			[
+				"set theme",
+				"UI: Select Theme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 208.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/khoa/com/ktn-x/tft-leaderboard"
+	],
+	"file_history":
+	[
+		"/Users/khoa/tunezilla/zed-tickets/database/factories/AssignGroupFactory.php",
+		"/Users/khoa/tunezilla/zed-tickets/app/Http/Resources/User.php",
+		"/Users/khoa/tunezilla/zed-tickets/database/seeders/TicketCanadianDealer.php",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Login.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/User/UserPicker.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Dealer/DealerPicker.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/api/handleErrorMessages.ts",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/app/line_participants.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/cmd/import.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/app/cmd_participants.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/app/participants.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/cmd/names.go",
+		"/Users/khoa/tunezilla/zed-tickets/.gitlab-ci.yml",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/tft/transform_types.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/tft/transform.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/.sublime-project",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/.gitignore",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Ticket/TicketWatcher.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/.eslintrc.js",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Watcher/AssignedPicker.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/tsconfig.json",
+		"/Users/khoa/docker/webdevops/bin/webdevops/taskloader/BaseTaskLoader.py",
+		"/Users/khoa/docker/webdevops/bin/webdevops/doit/__init__.py",
+		"/Users/khoa/docker/webdevops/bin/command/docker_build_multiarch_command.py",
+		"/Users/khoa/docker/webdevops/bin/webdevops/taskloader/__init__.py",
+		"/Users/khoa/docker/webdevops/bin/webdevops/taskloader/DockerPushTaskLoader.py",
+		"/Users/khoa/docker/webdevops/bin/webdevops/DockerfileUtility.py",
+		"/Users/khoa/docker/webdevops/bin/webdevops/taskloader/DockerPullTaskLoader.py",
+		"/Users/khoa/docker/webdevops/bin/webdevops/Configuration.py",
+		"/Users/khoa/docker/webdevops/bin/webdevops/Command.py",
+		"/Users/khoa/docker/webdevops/bin/console",
+		"/Users/khoa/docker/webdevops/bin/command/docker_build_command.py",
+		"/Users/khoa/docker/webdevops/bin/command/docker_push_command.py",
+		"/Users/khoa/docker/webdevops/conf/console.yml",
+		"/Users/khoa/docker/webdevops/bin/webdevops/taskloader/DockerBuildTaskLoader.py",
+		"/Users/khoa/docker/webdevops/Makefile",
+		"/Users/khoa/docker/webdevops/bin/webdevops/docker/DockerPyClient.py",
+		"/Users/khoa/docker/webdevops/conf/provision.yml",
+		"/Users/khoa/docker/webdevops/conf/diagram.yml",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/components/participant.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/components/tag.js",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/api/points/TicketPoint.ts",
+		"/Users/khoa/tunezilla/zed-tickets/app/Http/Resources/Note.php",
+		"/Users/khoa/tunezilla/zed-tickets/app/Http/Resources/Message.php",
+		"/Users/khoa/tunezilla/zed-tickets/app/Note.php",
+		"/Users/khoa/tunezilla/zed-tickets/app/Message.php",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/cmd/config.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/Dockerfile",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/example.txt",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/cmd/root.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/cmd/serve.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/web/web.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/README.md",
+		"/Users/khoa/tunezilla/tunezilla-components/src/components/Editor/Extensions/FileUploader.ts",
+		"/Users/khoa/tunezilla/tunezilla-components/src/components/Editor/Extensions/Mention.ts",
+		"/Users/khoa/tunezilla/tunezilla-components/src/components/Editor/Extensions/BaseExtensions.ts",
+		"/Users/khoa/tunezilla/tunezilla-components/src/components/Editor/TipTapEditor.vue",
+		"/Users/khoa/tunezilla/tunezilla-components/src/components/Editor/Extensions/Image.ts",
+		"/Users/khoa/tunezilla/tunezilla-components/package.json",
+		"/Users/khoa/tunezilla/tunezilla-components/src/components/Editor/Extensions/Tooltip.ts",
+		"/Users/khoa/tunezilla/tunezilla-components/node_modules/@types/prosemirror-state/index.d.ts",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Watcher/WatchButton.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Watcher/Counter.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/package.json",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Category/CategoryUsers.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/api/points/AuthPoint.ts",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/Dockerfile.aio",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/main.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/.github/workflows/release.yml",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/.github/workflows/go.yml",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/package.json",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/src/components/participant.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/src/components/tag.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/src/useResults.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/index.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/tailwind.config.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/src/styles/page.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/_app.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/example.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/page.module.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/base.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/page.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/src/styles/participant.module.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/components/participant.module.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/tft/riot.go",
+		"/Users/khoa/tunezilla/zed-tickets/tests/Feature/SanitizeHTMLTest.php",
+		"/Users/khoa/tunezilla/zed-tickets/ui/tests/e2e/specs/tuner-file-visibility.js",
+		"/Users/khoa/tunezilla/zed-tickets/ui/tests/e2e/support/commands.js",
+		"/Users/khoa/tunezilla/zed-tickets/ui/tests/e2e/support/index.js",
+		"/Users/khoa/tunezilla/zed-tickets/.env",
+		"/Users/khoa/tunezilla/zed-tickets/docker-compose.yml",
+		"/Users/khoa/tunezilla/zed-tickets/README.md",
+		"/Users/khoa/tunezilla/zed-tickets/docker-compose.override.yml",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/.gitattributes",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/.gitignore",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/web/leaderboard.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/data/data.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/web/util.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/app/app.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/data/numbers.go",
+		"/Users/khoa/tunezilla/tunezilla-components/src/components/Editor/TipTapRenderer.vue",
+		"/Users/khoa/tunezilla/tunezilla-components/src/styles/styles.scss",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/components/participant.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/useResults.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/next.config.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/nextjs/next.config.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/api/hello.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/pages/api/index.js",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/package.json",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Notes/NoteItem.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/contentaware.ts",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Ticket/MessageItem.vue",
+		"/Users/khoa/tunezilla/zed-tickets/ui/src/components/Notes/NoteForm.vue",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/styles/Home.module.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/site/styles/globals.css",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/static/index.html",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/web/poll.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/tft/tft.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/app/error_bag.go",
+		"/Users/khoa/com/ktn-x/tft-leaderboard/tft/riot_types.go",
+		"/Users/khoa/tunezilla/zed-tickets/ui/package-lock.json",
+		"/Users/khoa/tunezilla/custom-prosemirror/src/Mutator.php",
+		"/Users/khoa/tunezilla/custom-prosemirror/test/KwTooltipTest.php",
+		"/Users/khoa/tunezilla/custom-prosemirror/src/KwTooltip.php",
+		"/Users/khoa/tunezilla/custom-prosemirror/src/Facades/KwTooltip.php",
+		"/Users/khoa/tunezilla/custom-prosemirror/src/Facades/IFacade.php",
+		"/Users/khoa/tunezilla/satis-repository/build/satis.json",
+		"/Users/khoa/tunezilla/custom-prosemirror/README.md"
+	],
+	"find":
+	{
+		"height": 42.0
+	},
+	"find_in_files":
+	{
+		"height": 110.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tft/transform_types.go",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2729,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1732,
+								1732
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								}
+							],
+							"lsp_uri": "file:///Users/khoa/com/ktn-x/tft-leaderboard/tft/transform_types.go",
+							"show_definitions": true,
+							"syntax": "Packages/Go/Go.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1684.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 42.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.diagnostics":
+	{
+		"height": 144.0
+	},
+	"output.exec":
+	{
+		"height": 144.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.language servers":
+	{
+		"height": 132.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups-dummy":
+	{
+		"height": 0.0
+	},
+	"output.references":
+	{
+		"height": 144.0
+	},
+	"pinned_build_system": "",
+	"project": "tft.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Sanitize",
+				"tests/Feature/SanitizeHTMLTest.php"
+			],
+			[
+				"Message.php",
+				"app/Message.php"
+			],
+			[
+				"Note.php",
+				"app/Note.php"
+			],
+			[
+				"MessageItem",
+				"src/components/Ticket/MessageItem.vue"
+			],
+			[
+				"app/Exceptions/",
+				"app/Exceptions/Handler.php"
+			],
+			[
+				"JsonFixtureRep",
+				"app/Console/Commands/Assignment/JsonFixtureRepository.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 309.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 348.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
