@@ -10,13 +10,13 @@ import (
 )
 
 type Store struct {
-	storage *bolt.DB
+	storage  *bolt.DB
 	dataPath string
 }
 
 type Contestant struct {
-	SequenceId uint64 `json:"sequence_id"`
-	Summoner *tft.Summoner `json:"summoner"`
+	SequenceId uint64        `json:"sequence_id"`
+	Summoner   *tft.Summoner `json:"summoner"`
 }
 
 const timestampKey = "last-modified"
@@ -30,7 +30,7 @@ func OpenDB(dataPath string) (*Store, error) {
 	}
 
 	store := &Store{
-		storage: db,
+		storage:  db,
 		dataPath: dataPath,
 	}
 
@@ -122,7 +122,7 @@ func (s *Store) UpdateContestants(contestants []*Contestant) error {
 
 func (s *Store) ListContestants() ([]*Contestant, error) {
 	collection := make([]*Contestant, 0, 7)
-	err := s.storage.View(func (tx *bolt.Tx) error {
+	err := s.storage.View(func(tx *bolt.Tx) error {
 		b := tx.Bucket([]byte("contestants"))
 		c := b.Cursor()
 
@@ -167,9 +167,9 @@ func (s *Store) ListContestantRanks() (tft.RankResults, error) {
 
 			pair := &tft.TftPair{
 				Summoner: summoner,
-				Rank: &tft.TftLeague{},
+				Rank:     &tft.TftLeague{},
 			}
-			
+
 			if rawLeague := leagueBucket.Get([]byte(summoner.Id)); rawLeague != nil {
 				err := json.Unmarshal(rawLeague, pair.Rank)
 				if err != nil {
@@ -189,7 +189,7 @@ func (s *Store) ListContestantRanks() (tft.RankResults, error) {
 		}
 
 		return nil
-	});
+	})
 
 	return collection, err
 }
@@ -217,13 +217,20 @@ func (s *Store) GetRankTimestamp() (uint64, error) {
 	return ts, nil
 }
 
-func (s *Store) UpdateRankTimestamp(b *bolt.Bucket) error {
+func upsertRankTimestamp(b *bolt.Bucket) error {
 	ts, err := itob(uint64(time.Now().Unix()))
 	if err != nil {
 		return err
 	}
 
 	return b.Put([]byte(timestampKey), ts)
+}
+
+func (s *Store) UpdateRankTimestamp() error {
+	return s.storage.Update(func(tx *bolt.Tx) error {
+		b := tx.Bucket([]byte("tft-leagues"))
+		return upsertRankTimestamp(b)
+	})
 }
 
 func (s *Store) UpdateContestantRanks(items []*tft.TftPair) error {
@@ -251,7 +258,7 @@ func (s *Store) UpdateContestantRanks(items []*tft.TftPair) error {
 		}
 
 		// last-modified timestamp for dealing with caching
-		s.UpdateRankTimestamp(b)
+		upsertRankTimestamp(b)
 
 		return nil
 	})
