@@ -141,7 +141,7 @@ func (r *RiotClient) TftRanks(summonerId string) ([]*TftLeague, error) {
 
 	var (
 		errMsg = fmt.Sprintf("failed to fetch tft league rank for summoner [%s]:", summonerId)
-		ranks []*TftLeague
+		ranks  []*TftLeague
 	)
 
 	if resp.StatusCode != http.StatusOK {
@@ -156,21 +156,23 @@ func (r *RiotClient) TftRanks(summonerId string) ([]*TftLeague, error) {
 	return ranks, nil
 }
 
-func (r *RiotClient) TftRanked(summonerId string) (*TftLeague, error) {
-	queueType := "RANKED_TFT"
-
+func (r *RiotClient) TftRanked(summonerId string) (map[string]*TftLeague, error) {
 	ranks, err := r.TftRanks(summonerId)
 	if err != nil {
 		return nil, err
 	}
 
-	for _, rank := range ranks {
-		if rank.QueueType == queueType {
-			return rank, nil
-		}
+	if len(ranks) <= 0 {
+		// todo: build this into a real error
+		fmt.Printf("summoner [%s] has no tft league rank(s): %s\n", summonerId)
+		return nil, nil
 	}
 
-	// explicitly don't spit out error for nil tft rank
-	fmt.Printf("summoner [%s] has no tft league rank of queue type: %s\n",  summonerId, queueType)
-	return nil, nil
+	ranked := make(map[string]*TftLeague, len(ranks))
+
+	for _, rank := range ranks {
+		ranked[rank.QueueType] = rank
+	}
+
+	return ranked, nil
 }

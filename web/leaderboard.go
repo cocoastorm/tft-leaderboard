@@ -18,7 +18,7 @@ type Info struct {
 }
 
 type Board struct {
-	Store *data.Store
+	Store data.Database
 	IData *Info
 }
 

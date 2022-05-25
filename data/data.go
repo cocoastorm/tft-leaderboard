@@ -1,6 +1,7 @@
 package data
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"time"
@@ -36,21 +37,17 @@ func OpenDB(dataPath string) (*Store, error) {
 
 	// create bbolt buckets
 	err = db.Update(func(tx *bolt.Tx) error {
-		var err error
-
-		_, err = tx.CreateBucketIfNotExists([]byte("contestants"))
-		if err != nil {
-			return err
+		buckets := [][]byte{
+			[]byte("contestants"),
+			[]byte("tft-leagues"),
+			[]byte("discord"),
 		}
 
-		_, err = tx.CreateBucketIfNotExists([]byte("tft-leagues"))
-		if err != nil {
-			return err
-		}
-
-		_, err = tx.CreateBucketIfNotExists([]byte("discord"))
-		if err != nil {
-			return err
+		for _, name := range buckets {
+			_, err := tx.CreateBucketIfNotExists(name)
+			if err != nil {
+				return err
+			}
 		}
 
 		return nil
@@ -167,22 +164,47 @@ func (s *Store) ListContestantRanks() (tft.RankResults, error) {
 
 			pair := &tft.TftPair{
 				Summoner: summoner,
-				Rank:     &tft.TftLeague{},
+				Rank:     make(map[string]*tft.TftLeague),
 			}
 
-			if rawLeague := leagueBucket.Get([]byte(summoner.Id)); rawLeague != nil {
-				err := json.Unmarshal(rawLeague, pair.Rank)
+			prefix := []byte(summoner.Id)
+			c := leagueBucket.Cursor()
+
+			for k, v := c.Seek(prefix); k != nil && bytes.HasPrefix(k, prefix); k, v = c.Next() {
+				rank := &tft.TftLeague{}
+
+				err := json.Unmarshal(v, rank)
 				if err != nil {
 					// todo: error aggregator per tft league
 					err = fmt.Errorf("failed to decode tft league: %s", err)
+					fmt.Println(err)
+				}
+
+				pair.Rank[rank.QueueType] = rank
+			}
+
+			if len(pair.Rank) != 0 {
+				collection = append(collection, pair.Transform())
+				return nil
+			}
+
+			// fallback behavior, reference summoner id directly
+			rawLeague := leagueBucket.Get([]byte(summoner.Id))
+
+			if rawLeague != nil {
+				mainRank := &tft.TftLeague{}
+
+				err := json.Unmarshal(rawLeague, mainRank)
+				if err != nil {
+					// todo: error aggregator per tft league
+					err = fmt.Errorf("failed to decode tft league: %s", err)
+					fmt.Println(err)
+				} else {
+					pair.Rank[tft.RankQueueType] = mainRank
 				}
 			} else {
 				// explicitly set rank to nil here to avoid empty json object
 				pair.Rank = nil
-
-				// todo: error aggregator per tft league
-				err = fmt.Errorf("no tft rank for %s [%s]", summoner.Name, summoner.Id)
-				fmt.Println(err)
 			}
 
 			collection = append(collection, pair.Transform())
@@ -233,6 +255,21 @@ func (s *Store) UpdateRankTimestamp() error {
 	})
 }
 
+// upsertRankLeague adds a rank league by its queue type.
+// it concatenates the summoner's id and queue type as its key.
+// <summonerId>.<queueType>
+func upsertRankLeague(b *bolt.Bucket, summonerId []byte, item *tft.TftLeague) error {
+	keyPieces := [][]byte{summonerId, []byte(item.QueueType)}
+	key := bytes.Join(keyPieces, []byte("."))
+
+	encoded, err := json.Marshal(item)
+	if err != nil {
+		return err
+	}
+
+	return b.Put(key, encoded)
+}
+
 func (s *Store) UpdateContestantRanks(items []*tft.TftPair) error {
 	return s.storage.Batch(func(tx *bolt.Tx) error {
 		b := tx.Bucket([]byte("tft-leagues"))
@@ -241,20 +278,34 @@ func (s *Store) UpdateContestantRanks(items []*tft.TftPair) error {
 			summoner := pair.Summoner
 
 			// rank can be empty, if so skip it
-			if pair.Rank == nil {
-				err := fmt.Errorf("skipping %s [%s]", summoner.Name, summoner.Id)
+			if len(pair.Rank) == 0 {
+				err := fmt.Errorf("rank list empty, skipping %s [%s]", summoner.Name, summoner.Id)
 				fmt.Println(err)
 				continue
 			}
 
-			encoded, err := json.Marshal(pair.Rank)
-			if err != nil {
-				err = fmt.Errorf("failed to update rank for %s [%s]: %s", summoner.Name, summoner.Id, err)
-				fmt.Println(err)
-				continue
+			// backwards compatibility: store main ranked league with summoner id as the key
+			normal, ok := pair.Rank[tft.RankQueueType]
+			if ok {
+				encoded, err := json.Marshal(normal)
+				if err != nil {
+					err = fmt.Errorf("failed to update normal rank for %s [%s]: %s", summoner.Name, summoner.Id, err)
+					fmt.Println(err)
+				}
+
+				err = b.Put([]byte(summoner.Id), encoded)
+				if err != nil {
+					return err
+				}
 			}
 
-			b.Put([]byte(summoner.Id), encoded)
+			// store all rank types
+			for queueType, rank := range pair.Rank {
+				err := upsertRankLeague(b, []byte(summoner.Id), rank)
+				if err != nil {
+					return fmt.Errorf("failed to update %s rank for %s [%s]: %s", queueType, summoner.Name, summoner.Id, err)
+				}
+			}
 		}
 
 		// last-modified timestamp for dealing with caching
