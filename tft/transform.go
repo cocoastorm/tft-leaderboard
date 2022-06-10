@@ -29,11 +29,7 @@ func (pair *TftPair) Transform() *WTftPair {
 	}
 
 	if pair.Rank != nil {
-		w.Rank = make(map[string]*WTftLeague, len(pair.Rank))
-
-		for k, v := range pair.Rank {
-			w.Rank[k] = v.transform()
-		}
+		w.Rank = pair.Rank.transform()
 	}
 
 	return w

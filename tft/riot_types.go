@@ -40,6 +40,11 @@ type TftLeague struct {
 }
 
 type TftPair struct {
-	Summoner *Summoner             `json:"summoner"`
-	Rank     map[string]*TftLeague `json:"rank"`
+	Summoner *Summoner  `json:"summoner"`
+	Rank     *TftLeague `json:"rank"`
+}
+
+type TftRanks struct {
+	Summoner *Summoner    `json:"summoner"`
+	Ranks    []*TftLeague `json:"ranks"`
 }

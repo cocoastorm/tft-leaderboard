@@ -16,7 +16,7 @@ type Jabber struct {
 func (app *Jabber) Import(pool ParticipantPool) ([]*data.Contestant, error) {
 	var (
 		participants = pool.GetParticipants()
-		errorBag     = NewErrorBag(len(participants))
+		errorBag     = NewErrorBag()
 	)
 
 	contestants, err := app.Store.ListContestants()
@@ -49,30 +49,26 @@ func (app *Jabber) UpdateRanks() error {
 		return err
 	}
 
-	items := make([]*tft.TftPair, 0, len(contestants))
-	problems := NewErrorBag(len(contestants))
+	items := make([]*tft.TftRanks, 0, len(contestants))
+	problems := NewErrorBag()
 
 	log.Println("updating ranks")
 
 	for _, contestant := range contestants {
 		summoner := contestant.Summoner
-		rank, err := app.Riot.TftRanked(summoner.Id)
+		ranks, err := app.Riot.TftRanks(summoner.Id)
 
 		if err != nil {
 			problems.Add(err)
 			continue
 		}
 
-		pair := &tft.TftPair{
+		item := &tft.TftRanks{
 			Summoner: summoner,
-			Rank:     rank,
+			Ranks:    ranks,
 		}
 
-		items = append(items, pair)
-
-		if rank != nil {
-			log.Println(data.PrintResult(pair))
-		}
+		items = append(items, item)
 	}
 
 	err = app.Store.UpdateContestantRanks(items)

@@ -9,9 +9,9 @@ type ErrorBag struct {
 	Errors []error
 }
 
-func NewErrorBag(length int) *ErrorBag {
+func NewErrorBag() *ErrorBag {
 	return &ErrorBag{
-		Errors: make([]error, 0, length),
+		Errors: []error{},
 	}
 }
 

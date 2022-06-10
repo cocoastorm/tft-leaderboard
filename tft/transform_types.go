@@ -75,8 +75,8 @@ type WTftLeague struct {
 }
 
 type WTftPair struct {
-	Summoner *WSummoner             `json:"summoner"`
-	Rank     map[string]*WTftLeague `json:"rank"`
+	Summoner *WSummoner  `json:"summoner"`
+	Rank     *WTftLeague `json:"rank"`
 }
 
 type RankResults []*WTftPair

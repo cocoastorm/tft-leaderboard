@@ -156,23 +156,3 @@ func (r *RiotClient) TftRanks(summonerId string) ([]*TftLeague, error) {
 	return ranks, nil
 }
 
-func (r *RiotClient) TftRanked(summonerId string) (map[string]*TftLeague, error) {
-	ranks, err := r.TftRanks(summonerId)
-	if err != nil {
-		return nil, err
-	}
-
-	if len(ranks) <= 0 {
-		// todo: build this into a real error
-		fmt.Printf("summoner [%s] has no tft league rank(s): %s\n", summonerId)
-		return nil, nil
-	}
-
-	ranked := make(map[string]*TftLeague, len(ranks))
-
-	for _, rank := range ranks {
-		ranked[rank.QueueType] = rank
-	}
-
-	return ranked, nil
-}
